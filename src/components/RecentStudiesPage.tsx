@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { 
+import { ImageWithFallback } from "./ui/image-with-fallback";
+import {
   Calendar,
   Users,
   Clock,
@@ -14,7 +14,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Play,
-  Pause
+  Pause,
 } from "lucide-react";
 
 interface RecentStudiesPageProps {
@@ -34,9 +34,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 2 dias",
       participants: 45,
       duration: "40 min",
-      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaWJsZSUyMHN0dWR5JTIwZ3JvdXB8ZW58MXx8fHwxNzU4NjMzNTQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Estudo sobre a autoridade suprema da Palavra de Deus e sua relevância para nossa vida cotidiana.",
-      category: "Fundamentos"
+      image:
+        "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaWJsZSUyMHN0dWR5JTIwZ3JvdXB8ZW58MXx8fHwxNzU4NjMzNTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Estudo sobre a autoridade suprema da Palavra de Deus e sua relevância para nossa vida cotidiana.",
+      category: "Fundamentos",
     },
     {
       id: 2,
@@ -44,9 +46,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 5 dias",
       participants: 38,
       duration: "45 min",
-      image: "https://images.unsplash.com/photo-1565130935995-303a00dad6d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW1pbHklMjBwcmF5ZXJ8ZW58MXx8fHwxNzU4NjMzNTUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Compreendendo a natureza trina de Deus: Pai, Filho e Espírito Santo em perfeita unidade.",
-      category: "Teologia"
+      image:
+        "https://images.unsplash.com/photo-1565130935995-303a00dad6d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW1pbHklMjBwcmF5ZXJ8ZW58MXx8fHwxNzU4NjMzNTUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Compreendendo a natureza trina de Deus: Pai, Filho e Espírito Santo em perfeita unidade.",
+      category: "Teologia",
     },
     {
       id: 3,
@@ -54,9 +58,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 1 semana",
       participants: 52,
       duration: "40 min",
-      image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjB3b3JzaGlwfGVufDF8fHx8MTc1ODYzMzU1NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "A pessoa e obra salvadora de Cristo como centro da fé cristã e esperança da humanidade.",
-      category: "Salvação"
+      image:
+        "https://images.unsplash.com/photo-1507692049790-de58290a4334?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjB3b3JzaGlwfGVufDF8fHx8MTc1ODYzMzU1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "A pessoa e obra salvadora de Cristo como centro da fé cristã e esperança da humanidade.",
+      category: "Salvação",
     },
     {
       id: 4,
@@ -64,9 +70,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 1 semana",
       participants: 41,
       duration: "35 min",
-      image: "https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMHByYXlpbmd8ZW58MXx8fHwxNzU4NjMzNTU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "A origem e consequências do pecado, e a necessidade universal da graça divina.",
-      category: "Doutrina"
+      image:
+        "https://images.unsplash.com/photo-1437603568260-1950d3ca6eab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMHByYXlpbmd8ZW58MXx8fHwxNzU4NjMzNTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "A origem e consequências do pecado, e a necessidade universal da graça divina.",
+      category: "Doutrina",
     },
     {
       id: 5,
@@ -74,9 +82,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 2 semanas",
       participants: 47,
       duration: "40 min",
-      image: "https://images.unsplash.com/photo-1565813086292-604790c8a97b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBjb21tdW5pdHl8ZW58MXx8fHwxNzU4NjM0MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "O dom gratuito da salvação através da graça de Deus, não por obras humanas.",
-      category: "Graça"
+      image:
+        "https://images.unsplash.com/photo-1565813086292-604790c8a97b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBjb21tdW5pdHl8ZW58MXx8fHwxNzU4NjM0MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "O dom gratuito da salvação através da graça de Deus, não por obras humanas.",
+      category: "Graça",
     },
     {
       id: 6,
@@ -84,9 +94,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 2 semanas",
       participants: 33,
       duration: "30 min",
-      image: "https://images.unsplash.com/photo-1541802802036-1d572ba70147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBiaWJsZXxlbnwxfHx8fDE3NTg2MzM1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Métodos práticos e amorosos para ensinar os fundamentos da fé às próximas gerações.",
-      category: "Pedagogia"
+      image:
+        "https://images.unsplash.com/photo-1541802802036-1d572ba70147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBiaWJsZXxlbnwxfHx8fDE3NTg2MzM1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Métodos práticos e amorosos para ensinar os fundamentos da fé às próximas gerações.",
+      category: "Pedagogia",
     },
     {
       id: 7,
@@ -94,9 +106,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 3 semanas",
       participants: 29,
       duration: "35 min",
-      image: "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaWJsZSUyMHJlYWRpbmd8ZW58MXx8fHwxNzU4NjM2MDIwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Mergulhando profundamente nas Escrituras para compreender a vontade de Deus.",
-      category: "Estudo Bíblico"
+      image:
+        "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaWJsZSUyMHJlYWRpbmd8ZW58MXx8fHwxNzU4NjM2MDIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Mergulhando profundamente nas Escrituras para compreender a vontade de Deus.",
+      category: "Estudo Bíblico",
     },
     {
       id: 8,
@@ -104,9 +118,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 3 semanas",
       participants: 51,
       duration: "45 min",
-      image: "https://images.unsplash.com/photo-1609234656388-0ff363383899?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmF5ZXIlMjBncm91cHxlbnwxfHx8fDE3NTg2MzYwMjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Momento de comunhão e intercessão pela igreja e pelas famílias.",
-      category: "Oração"
+      image:
+        "https://images.unsplash.com/photo-1609234656388-0ff363383899?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmF5ZXIlMjBncm91cHxlbnwxfHx8fDE3NTg2MzYwMjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Momento de comunhão e intercessão pela igreja e pelas famílias.",
+      category: "Oração",
     },
     {
       id: 9,
@@ -114,9 +130,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 4 semanas",
       participants: 78,
       duration: "60 min",
-      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBzZXJ2aWNlfGVufDF8fHx8MTc1ODYzMzU2OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Celebração em comunidade com louvor, adoração e reflexão espiritual.",
-      category: "Adoração"
+      image:
+        "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBzZXJ2aWNlfGVufDF8fHx8MTc1ODYzMzU2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Celebração em comunidade com louvor, adoração e reflexão espiritual.",
+      category: "Adoração",
     },
     {
       id: 10,
@@ -124,9 +142,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 1 mês",
       participants: 42,
       duration: "50 min",
-      image: "https://images.unsplash.com/photo-1667790977364-f2c0c1a22b5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjBmZWxsb3dzaGlwfGVufDF8fHx8MTc1ODYzNjAzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Fortalecimento dos laços fraternos através da Palavra e testemunhos.",
-      category: "Comunhão"
+      image:
+        "https://images.unsplash.com/photo-1667790977364-f2c0c1a22b5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjBmZWxsb3dzaGlwfGVufDF8fHx8MTc1ODYzNjAzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Fortalecimento dos laços fraternos através da Palavra e testemunhos.",
+      category: "Comunhão",
     },
     {
       id: 11,
@@ -134,9 +154,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 1 mês",
       participants: 63,
       duration: "50 min",
-      image: "https://images.unsplash.com/photo-1650763202808-23e89654711c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWxpZ2lvdXMlMjBlZHVjYXRpb258ZW58MXx8fHwxNzU4NjM2MDMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Ensino sistemático das doutrinas bíblicas para todas as idades.",
-      category: "Educação"
+      image:
+        "https://images.unsplash.com/photo-1650763202808-23e89654711c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWxpZ2lvdXMlMjBlZHVjYXRpb258ZW58MXx8fHwxNzU4NjM2MDMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Ensino sistemático das doutrinas bíblicas para todas as idades.",
+      category: "Educação",
     },
     {
       id: 12,
@@ -144,9 +166,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 1 mês",
       participants: 35,
       duration: "30 min",
-      image: "https://images.unsplash.com/photo-1565130936076-02149ea8c20e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW1pbHklMjB3b3JzaGlwfGVufDF8fHx8MTc1ODYzNjAzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Momentos especiais de adoração e ensino em família na igreja.",
-      category: "Família"
+      image:
+        "https://images.unsplash.com/photo-1565130936076-02149ea8c20e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW1pbHklMjB3b3JzaGlwfGVufDF8fHx8MTc1ODYzNjAzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Momentos especiais de adoração e ensino em família na igreja.",
+      category: "Família",
     },
     {
       id: 13,
@@ -154,9 +178,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 5 semanas",
       participants: 28,
       duration: "40 min",
-      image: "https://images.unsplash.com/photo-1736878014266-cd69aaac14cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraWRzJTIwYmlibGUlMjBzdHVkeXxlbnwxfHx8fDE3NTg2MzYwMzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Atividades educativas e divertidas para ensinar as crianças sobre Jesus.",
-      category: "Infantil"
+      image:
+        "https://images.unsplash.com/photo-1736878014266-cd69aaac14cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraWRzJTIwYmlibGUlMjBzdHVkeXxlbnwxfHx8fDE3NTg2MzYwMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Atividades educativas e divertidas para ensinar as crianças sobre Jesus.",
+      category: "Infantil",
     },
     {
       id: 14,
@@ -164,17 +190,21 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
       date: "Há 6 semanas",
       participants: 44,
       duration: "55 min",
-      image: "https://images.unsplash.com/photo-1593896385987-16bcbf9451e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMG1pbmlzdHJ5fGVufDF8fHx8MTc1ODYzNjA0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      description: "Encontros dinâmicos com jovens focados no crescimento espiritual e missional.",
-      category: "Juventude"
-    }
+      image:
+        "https://images.unsplash.com/photo-1593896385987-16bcbf9451e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMG1pbmlzdHJ5fGVufDF8fHx8MTc1ODYzNjA0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      description:
+        "Encontros dinâmicos com jovens focados no crescimento espiritual e missional.",
+      category: "Juventude",
+    },
   ];
 
   // Estudos destacados para o slideshow (primeiros 6)
   const featuredStudies = allStudyImages.slice(0, 6);
-  
+
   // Determina quantas imagens mostrar na galeria - reduzido para melhorar performance
-  const imagesToShow = showAllImages ? allStudyImages : allStudyImages.slice(0, 6);
+  const imagesToShow = showAllImages
+    ? allStudyImages
+    : allStudyImages.slice(0, 6);
 
   // Auto-play functionality para o slideshow
   useEffect(() => {
@@ -192,7 +222,9 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + featuredStudies.length) % featuredStudies.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + featuredStudies.length) % featuredStudies.length
+    );
   };
 
   const goToSlide = (index: number) => {
@@ -217,12 +249,15 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
             </h1>
           </div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed mb-4">
-            Reviva os momentos mais marcantes dos nossos estudos bíblicos, cultos e encontros de comunhão 
-            através desta galeria visual que documenta nossa jornada de fé.
+            Reviva os momentos mais marcantes dos nossos estudos bíblicos,
+            cultos e encontros de comunhão através desta galeria visual que
+            documenta nossa jornada de fé.
           </p>
           <div className="flex items-center justify-center gap-2 text-[#D69E2E]">
             <Heart className="w-5 h-5" />
-            <span className="text-sm">Registrando momentos especiais da nossa igreja</span>
+            <span className="text-sm">
+              Registrando momentos especiais da nossa igreja
+            </span>
           </div>
         </div>
       </section>
@@ -235,7 +270,8 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
               Momentos em Destaque
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Os estudos mais recentes e impactantes da nossa comunidade em apresentação automática
+              Os estudos mais recentes e impactantes da nossa comunidade em
+              apresentação automática
             </p>
           </div>
 
@@ -247,10 +283,10 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                 alt={currentStudy.title}
                 className="w-full h-full object-cover transition-all duration-700 ease-in-out"
               />
-              
+
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-              
+
               {/* Navigation Buttons */}
               <button
                 onClick={prevSlide}
@@ -258,7 +294,7 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              
+
               <button
                 onClick={nextSlide}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 text-white hover:scale-110"
@@ -271,7 +307,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                 onClick={toggleAutoPlay}
                 className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 text-white"
               >
-                {isAutoPlay ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                {isAutoPlay ? (
+                  <Pause className="w-5 h-5" />
+                ) : (
+                  <Play className="w-5 h-5" />
+                )}
               </button>
 
               {/* Content Overlay */}
@@ -280,11 +320,11 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                   <Badge className="bg-[#D69E2E] hover:bg-[#D69E2E] text-white mb-3">
                     {currentStudy.category}
                   </Badge>
-                  
+
                   <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">
                     {currentStudy.title}
                   </h3>
-                  
+
                   <p className="text-white/90 mb-4 leading-relaxed line-clamp-2">
                     {currentStudy.description}
                   </p>
@@ -315,9 +355,9 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-[#2C5282] scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                  index === currentSlide
+                    ? "bg-[#2C5282] scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
                 }`}
               />
             ))}
@@ -330,9 +370,9 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                 key={study.id}
                 onClick={() => goToSlide(index)}
                 className={`relative rounded-lg overflow-hidden aspect-video transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'ring-3 ring-[#2C5282] scale-105' 
-                    : 'hover:scale-105 opacity-70 hover:opacity-100'
+                  index === currentSlide
+                    ? "ring-3 ring-[#2C5282] scale-105"
+                    : "hover:scale-105 opacity-70 hover:opacity-100"
                 }`}
               >
                 <ImageWithFallback
@@ -362,14 +402,15 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
               </h2>
             </div>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              Explore todos os momentos registrados dos nossos estudos, cultos e atividades da igreja
+              Explore todos os momentos registrados dos nossos estudos, cultos e
+              atividades da igreja
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {imagesToShow.map((study) => (
-              <Card 
-                key={study.id} 
+              <Card
+                key={study.id}
                 className="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-0"
               >
                 <div className="relative overflow-hidden aspect-[4/3]">
@@ -378,7 +419,7 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
                     alt={study.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  
+
                   {/* Overlay com informações */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -420,7 +461,7 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
 
           {/* Botão Ver Mais/Menos */}
           <div className="text-center mt-12">
-            <Button 
+            <Button
               onClick={() => setShowAllImages(!showAllImages)}
               variant="outline"
               className="border-[#2C5282] text-[#2C5282] hover:bg-[#2C5282] hover:text-white px-8"
@@ -441,8 +482,6 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
         </div>
       </section>
 
-
-
       {/* Call to Action */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -451,12 +490,12 @@ export function RecentStudiesPage({ onNavigate }: RecentStudiesPageProps) {
               Faça Parte da Nossa História
             </h2>
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-              Junte-se à nossa comunidade e participe dos próximos momentos que serão registrados 
-              nesta galeria de fé e comunhão.
+              Junte-se à nossa comunidade e participe dos próximos momentos que
+              serão registrados nesta galeria de fé e comunhão.
             </p>
-            
-            <Button 
-              onClick={() => onNavigate('modules')}
+
+            <Button
+              onClick={() => onNavigate("modules")}
               className="bg-[#D69E2E] hover:bg-[#B7821D] text-white px-8"
             >
               Conhecer os Módulos de Estudo
