@@ -81,21 +81,37 @@ export function Footer() {
                 <Mail className="w-6 h-6" />
               </a>
             </div>
-            <div className="py-3">
-              <h3 className="font-serif mb-3">Desenvolvido Por</h3>
-              <a
-                href="https://www.pedroallas.online/"
-                className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
-              >
-                <Monitor className="w-4 h-4" />
-                Pedro Allas dos Santos Borges
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-6 text-center text-gray-400">
-          <p>&copy; 2025 Fundamentos da Fé. Todos os direitos reservados.</p>
+        {/* Desenvolvedor Section */}
+        <div className="border-t border-gray-600 mt-8 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-center sm:text-left">
+              &copy; 2025 Fundamentos da Fé. Todos os direitos reservados.
+            </p>
+            <a
+              href="https://www.pedroallas.online/"
+              className="text-gray-300 hover:text-white transition-colors flex items-center gap-3 group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-sm">Desenvolvido por</span>
+              <div className="flex items-center gap-2">
+                <img
+                  src="/desenvolvedor.png"
+                  alt="Pedro Allas dos Santos Borges"
+                  className="w-8 h-8 rounded-full object-cover border border-gray-500 group-hover:border-white transition-colors"
+                />
+                <div className="flex flex-col text-right">
+                  <span className="text-sm font-medium">Pedro Allas</span>
+                  <span className="text-xs text-gray-400">
+                    Software Engineer
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
