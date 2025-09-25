@@ -91,7 +91,7 @@ export function Footer() {
               &copy; 2025 Fundamentos da Fé. Todos os direitos reservados.
             </p>
             <a
-              href="https://www.pedroallas.online/"
+              href="https://portifoliopedroallas.netlify.app/"
               className="text-gray-300 hover:text-white transition-colors flex items-center gap-3 group"
               target="_blank"
               rel="noopener noreferrer"
