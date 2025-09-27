@@ -14,19 +14,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Igreja Info */}
           <div>
-            <h3 className="font-serif mb-4">Fundamentos da Fé</h3>
+            <h3 className="font-serif mb-4">Fundamentos da Fé AD Seta</h3>
+            <p className="text-sm text-gray-400 mb-3">
+              Assembleia de Deus Araguaína
+            </p>
             <div className="space-y-2 text-gray-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Rua da Igreja, 123 - Centro</span>
+                <span>Araguaína - TO</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>(11) 1234-5678</span>
+                <span>(63) 3416-0000</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>contato@fundamentosdafe.org.br</span>
+                <span>contato@adseta.org.br</span>
               </div>
             </div>
           </div>
