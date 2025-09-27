@@ -46,7 +46,10 @@ export function Footer() {
                 </a>
               </div>
               <div>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="https://assembleia.org.br/wp-content/uploads/2017/07/declaracao-de-fe-das-assembleias-de-deus.pdf"
+                  className="hover:text-white transition-colors"
+                >
                   Declaração de Fé
                 </a>
               </div>
